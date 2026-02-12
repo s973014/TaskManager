@@ -1,0 +1,44 @@
+﻿@model Domain.Entities.Project
+
+@{
+    ViewData["Title"] = "Детали проекта";
+}
+
+<h2>@Model.Name</h2>
+<p>@Model.Description</p>
+
+<h3>Задачи проекта (@Model.Tasks.Count())</h3>
+
+@if (!Model.Tasks.Any())
+{
+    <p>Задачи пока отсутствуют.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Статус</th>
+                <th>Приоритет</th>
+                <th>Срок</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var task in Model.Tasks)
+            {
+                <tr>
+                    <td>@task.Title</td>
+                    <td>@task.Status</td>
+                    <td>@task.Priority</td>
+                    <td>@(task.DueDate?.ToString("yyyy-MM-dd") ?? "-")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<p>
+    <a class="btn btn-primary" href="@Url.Action("Edit", new { id = Model.Id })">Редактировать проект</a>
+    <a class="btn btn-danger" href="@Url.Action("Delete", new { id = Model.Id })">Удалить проект</a>
+    <a class="btn btn-secondary" href="@Url.Action("Index", "Home")">Назад к списку</a>
+</p>
