@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Domain.Enums
 {
-    public enum TaskStatus
+    public enum TaskPriority
     {
-        ToDo = 0,
-        InProgress = 1,
-        Done = 2
+        Low = 0,
+        Medium = 1,
+        High = 2
     }
 }
