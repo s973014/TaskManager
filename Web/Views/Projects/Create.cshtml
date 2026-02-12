@@ -1,0 +1,17 @@
+﻿@model Domain.Entities.Project
+
+<h2>Create Project</h2>
+
+<form asp-action="Create" method="post">
+    <label>Name</label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+    <br />
+
+    <label>Description</label>
+    <input asp-for="Description" />
+    <span asp-validation-for="Description"></span>
+    <br />
+
+    <button type="submit">Create</button>
+</form>
