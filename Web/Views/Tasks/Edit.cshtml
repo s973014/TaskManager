@@ -1,0 +1,41 @@
+﻿@model Domain.Entities.TaskItem
+
+<h2>Редактировать задачу</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="ProjectId" />
+
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input class="form-control" asp-for="Title" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea class="form-control" asp-for="Description"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Status"></label>
+        <select class="form-control" asp-for="Status"
+                asp-items="Html.GetEnumSelectList<Domain.Enums.TaskStatus>()"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Priority"></label>
+        <select class="form-control" asp-for="Priority"
+                asp-items="Html.GetEnumSelectList<Domain.Enums.TaskPriority>()"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DueDate"></label>
+        <input type="date" class="form-control" asp-for="DueDate" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Сохранить</button>
+    <a class="btn btn-secondary"
+       href="@Url.Action("Edit", "Projects", new { id = Model.ProjectId })">
+        Назад к проекту
+    </a>
+</form>

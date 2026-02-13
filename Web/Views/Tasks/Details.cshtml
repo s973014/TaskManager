@@ -1,0 +1,10 @@
+﻿@model Domain.Entities.TaskItem
+
+<h2>@Model.Title</h2>
+<p>@Model.Description</p>
+<p>Status: @Model.Status</p>
+<p>Priority: @Model.Priority</p>
+<p>Due: @(Model.DueDate?.ToString("yyyy-MM-dd") ?? "-")</p>
+<p>Project: @Model.Project.Name</p>
+
+<a class="btn btn-secondary" href="@Url.Action("Index", "Home")">Назад</a>
