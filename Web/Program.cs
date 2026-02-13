@@ -5,7 +5,18 @@ using Application.Services;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
+
+
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ConfigureHttpsDefaults(httpsOptions =>
+    {
+        
+    });
+});
 
 builder.Services.AddControllersWithViews();
 
@@ -29,7 +40,12 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    dbContext.Database.Migrate();
+}
+
 app.UseStaticFiles();
 
 app.UseRouting();
