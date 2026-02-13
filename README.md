@@ -135,4 +135,5 @@ docker-compose up --build
 
 ### Просмотр проекта
 
-![Просмотр проекта](screenshots/project.jpg)
+![createtask](https://github.com/user-attachments/assets/5a17be22-fa5b-4b45-9fff-26337aaae245)
+
