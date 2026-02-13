@@ -107,25 +107,29 @@ docker-compose up --build
 
 ### Главная страница
 
-![Главная страница](screenshots/homepage.jpg)
+![homepage](https://github.com/user-attachments/assets/6999e811-fd2a-4a0b-8ec1-5de85e478a02)
+
 
 ---
 
 ### Создание проекта
 
-![Создание проекта](screenshots/createproject.jpg)
+![createproject](https://github.com/user-attachments/assets/ad929df4-8461-4c48-ad58-f7b87135214d)
+
 
 ---
 
 ### Редактирование проекта
 
-![Редактирование проекта](screenshots/editproject.jpg)
+![editproject](https://github.com/user-attachments/assets/58e554c0-697d-4d31-bee7-4add53053393)
+
 
 ---
 
 ### Создание новой задачи
 
-![Создание новой задачи](screenshots/createtask.jpg)
+![createtask](https://github.com/user-attachments/assets/6740a4b1-336f-4629-9014-73befec458f9)
+
 
 ---
 
